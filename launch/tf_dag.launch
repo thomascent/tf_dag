@@ -1,11 +1,8 @@
 <launch>
-
     <group>
         <remap from="/tf" to="/tf_dag"/>
-        <node name="world_to_C" pkg="tf" type="static_transform_publisher" args="0.1 0 0.3 -0.7 0 0 world C 1"/>
-        <node name="A_to_B" pkg="tf" type="static_transform_publisher" args="0 0.5 0 0 0 1.57 A B 1"/>
-        <node name="B_to_C" pkg="tf" type="static_transform_publisher" args="0 0.1 0 0.1 0 0 B C 1"/>
-        <node name="C_to_D" pkg="tf" type="static_transform_publisher" args="0.3 0.2 0.5 0.9 0.5 0 C D 1"/>
+        <node name="world_to_marker" pkg="tf" type="static_transform_publisher" args="0.1 0 0.3 0 0 0 1 world marker 1"/>
+        <node name="camera_to_marker" pkg="tf" type="static_transform_publisher" args="0 0.5 0 0 0 0 1 camera marker 1"/>
     </group>
 
     <node name="tf_dag" pkg="tf_dag" type="tf_dag" output="screen"/>

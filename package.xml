@@ -6,7 +6,7 @@
 
   <maintainer email="thomas@ascent.ai">Tom Stewart</maintainer>
 
-  <license></license>
+  <license>(c) Ascent Robotics Inc. All rights reserved.</license>
 
   <buildtool_depend>catkin</buildtool_depend>
   <depend>tf2_ros</depend>
