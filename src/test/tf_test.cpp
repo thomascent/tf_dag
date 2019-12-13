@@ -17,13 +17,13 @@ TEST(TestSuite, test_tf)
 
     auto transform_stamped = buffer.lookupTransform(parent_frame, child_frame, ros::Time(0), ros::Duration(5));
 
-    EXPECT_DOUBLE_EQ(transform_stamped.transform.translation.x, translation[0]);
-    EXPECT_DOUBLE_EQ(transform_stamped.transform.translation.y, translation[1]);
-    EXPECT_DOUBLE_EQ(transform_stamped.transform.translation.z, translation[2]);
-    EXPECT_DOUBLE_EQ(transform_stamped.transform.rotation.x, rotation[0]);
-    EXPECT_DOUBLE_EQ(transform_stamped.transform.rotation.y, rotation[1]);
-    EXPECT_DOUBLE_EQ(transform_stamped.transform.rotation.z, rotation[2]);
-    EXPECT_DOUBLE_EQ(transform_stamped.transform.rotation.w, rotation[3]);
+    EXPECT_NEAR(transform_stamped.transform.translation.x, translation[0], 1e-4);
+    EXPECT_NEAR(transform_stamped.transform.translation.y, translation[1], 1e-4);
+    EXPECT_NEAR(transform_stamped.transform.translation.z, translation[2], 1e-4);
+    EXPECT_NEAR(transform_stamped.transform.rotation.x, rotation[0], 1e-4);
+    EXPECT_NEAR(transform_stamped.transform.rotation.y, rotation[1], 1e-4);
+    EXPECT_NEAR(transform_stamped.transform.rotation.z, rotation[2], 1e-4);
+    EXPECT_NEAR(transform_stamped.transform.rotation.w, rotation[3], 1e-4);
 }
 
 

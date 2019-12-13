@@ -29,7 +29,7 @@ void TFDAG::frame_cb(const TFMessage::ConstPtr &msg)
 
             // Update the transform
             transform.child_frame_id = child;
-            transform.transform = tf2::toMsg(from_msg(transform_to_ancestor) * from_msg(transform));
+            transform.transform = tf2::toMsg(from_msg(transform) * from_msg(transform_to_ancestor));
         }
 
         // Update the local buffer immediately and send out the transform to any other listeners
