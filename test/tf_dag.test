@@ -7,6 +7,18 @@
 
     <node name="tf_dag" pkg="tf_dag" type="tf_dag"/>
 
-    <test test-name="test_mynode" pkg="mypkg" type="test_mynode" />
+    <test test-name="test_world_to_marker" pkg="tf_dag" type="test_tf_dag">
+        <param name="parent_frame" value="world"/>
+        <param name="child_frame" value="marker"/>
+        <rosparam param="translation">[0.1, 0, 0.3]</rosparam>
+        <rosparam param="rotation">[0, 0, 0, 1]</rosparam>
+    </test>
+
+    <test test-name="test_camera_to_marker" pkg="tf_dag" type="test_tf_dag">
+        <param name="parent_frame" value="camera"/>
+        <param name="child_frame" value="marker"/>
+        <rosparam param="translation">[0, 0.5, 0]</rosparam>
+        <rosparam param="rotation">[0, 0, 0, 1]</rosparam>
+    </test>
 
 </launch>

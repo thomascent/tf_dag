@@ -20,3 +20,9 @@ catkin_package()
 
 add_executable(tf_dag src/tf_dag.cpp)
 target_link_libraries(tf_dag ${catkin_LIBRARIES})
+
+if(CATKIN_ENABLE_TESTING)
+  find_package(rostest REQUIRED)
+  add_rostest_gtest(test_tf_dag test/tf_dag.test src/test/tf_test.cpp)
+  target_link_libraries(test_tf_dag ${catkin_LIBRARIES})
+endif()
